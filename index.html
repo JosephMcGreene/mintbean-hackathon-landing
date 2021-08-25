@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,80 +14,109 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" aria-current="page">[Home]</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav d-flex align-items-md-center">
-            <li class="nav-item px-4">
-              <a class="nav-link active" href="#">Who We Are</a>
-            </li>
-            <li class="nav-item px-4">
-              <a class="nav-link active" href="#">Docs</a>
-            </li>
-            <li class="nav-item px-4">
-              <a class="nav-link active" href="#"
-                ><button type="button" class="btn btn-light px-3 py-2">
-                  Play It Now!
-                </button></a
-              >
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+      <div class="container-fluid px-3">
+        <a class="navbar-brand" href="#top" aria-current="page">[Home]</a>
+        <ul class="navbar-nav d-flex flex-row align-items-center">
+          <li class="nav-item pe-4 px-lg-5">
+            <a class="nav-link active" href="#who-we-are">Who We Are</a>
+          </li>
+          <li class="nav-item px-lg-5">
+            <a class="nav-link active" href="#docs">Docs</a>
+          </li>
+          <li class="nav-item ps-4 px-lg-5">
+            <a class="nav-link active" href="#"
+              ><button type="button" class="btn btn-light px-3 py-2">
+                Play It Now!
+              </button></a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
 
-   <section>
+    <section class="px-2 mb-4">
       <h1 class="h1 text-center">Welcome!</h1>
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis modi, facere beatae omnis optio ea maiores atque exercitationem at dignissimos asperiores, rerum a pariatur minima rem labore iusto eos nostrum.
-      Deserunt, quam a rem aliquid illum harum ab tempora explicabo id consequuntur voluptatibus facere maiores tenetur, doloremque excepturi unde velit tempore non incidunt saepe laboriosam! Laboriosam maxime nesciunt blanditiis voluptatem?
-      Reiciendis, minus nisi distinctio possimus aliquid, perspiciatis blanditiis nobis quos quo, laudantium harum facilis dolorum eius asperiores alias. Molestias, dolores consequatur sequi reprehenderit sapiente modi eum suscipit mollitia maxime. Quae?</p>
-   </section>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis modi,
+        facere beatae omnis optio ea maiores atque exercitationem at dignissimos
+        asperiores, rerum a pariatur minima rem labore iusto eos nostrum.
+        Deserunt, quam a rem aliquid illum harum ab tempora explicabo id
+        consequuntur voluptatibus facere maiores tenetur, doloremque excepturi
+        unde velit tempore non incidunt saepe laboriosam! Laboriosam maxime
+        nesciunt blanditiis voluptatem?
+      </p>
 
-   <section>
-    <h2 class="h2 text-center">Who We Are</h2>
+      <button type="button" class="btn btn-dark px-4 py-3" id="play-button">
+        Play It Now!
+      </button>
+    </section>
 
-    <div class="row row-cols-1 row-cols-sm-3 g-4">
-       <div class="col">
-         <div class="card h-100">
-            <img src="./img/colorful-sunrise.jpg" class="card-img-top" alt="Sunrise">
+    <section class="mb-4" id="who-we-are">
+      <h2 class="h2 text-center mb-3">Who We Are</h2>
+
+      <div class="row row-cols-1 row-cols-sm-3" style="--bs-gutter-x: 0">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./img/colorful-sunrise.jpg"
+              class="card-img-top"
+              alt="Sunrise"
+            />
             <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae illo quia voluptatem. Dolorem veniam eveniet eum? Iure iste molestiae atque officiis, ea deleniti a voluptatibus ut! Est rem dolores excepturi!</p>
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+                illo quia voluptatem. Dolorem veniam eveniet eum? Iure iste
+                molestiae atque officiis, ea deleniti a voluptatibus ut! Est rem
+                dolores excepturi!
+              </p>
             </div>
-         </div>
-      </div>
-      <div class="col">
-         <div class="card h-100">
-            <img src="./img/profile-photo.jpg" class="card-img-top" alt="Joseph McGreene">
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./img/profile-photo.jpg"
+              class="card-img-top"
+              alt="Joseph McGreene"
+            />
             <div class="card-body">
-            <h5 class="card-title">Joseph McGreene</h5>
-            <p class="card-text">McGreene is a front end developer whose favorite stacks are React and CSS/Sass.</p>
+              <h5 class="card-title">Joseph McGreene</h5>
+              <p class="card-text">
+                McGreene is a front end developer whose favorite stacks are
+                React and CSS/Sass.
+              </p>
             </div>
-         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="./img/Stardew-Valley.png" class="card-img-top" alt="Stardew Valley">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi inventore consequatur dolores, id qui natus ullam neque totam error cum iste sed excepturi corrupti facilis magnam voluptas! Dolores, a debitis.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./img/colorful-sunrise.jpg"
+              class="card-img-top"
+              alt="Sunrise"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+                illo quia voluptatem. Dolorem veniam eveniet eum? Iure iste
+                molestiae atque officiis, ea deleniti a voluptatibus ut! Est rem
+                dolores excepturi!
+              </p>
+            </div>
           </div>
         </div>
       </div>
-   </section>
+    </section>
+
+    <section class="mb-4" id="docs">
+      <h2 class="h2 text-center">Docs</h2>
+
+      <article></article>
+    </section>
 
     <script src="index.js"></script>
   </body>
