@@ -1,0 +1,16 @@
+.game-field {
+  width: 500px;
+  height: 500px;
+  background-color: grey;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.game-tile{
+    font-size: 50px;
+    background-color: lightblue;
+    border: solid;
+    display: grid;
+    margin: .5rem;
+    place-items: center;
+}
