@@ -1,5 +1,7 @@
+import React from "react";
 import "./App.css";
-import Field from "components/Game/Field";
+import Field from "./components/Game/Field";
+
 function App() {
   return (
     <div className="App">
