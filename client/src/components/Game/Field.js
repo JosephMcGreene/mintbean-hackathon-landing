@@ -1,7 +1,12 @@
 import Tile from "./Tile";
 import "../../game.styles.css";
 import React, { useEffect, useRef, useState } from "react";
-import { DIRECTIONS, generateTiles, getMovedTiles } from "./helpers";
+import {
+  DIRECTIONS,
+  generateTiles,
+  getEmptyTilesInDirection,
+  getMovedTiles,
+} from "./helpers";
 // import styled, { keyframes } from "styled-components";
 // import {
 //   fadeOutDown,
@@ -12,9 +17,10 @@ import { DIRECTIONS, generateTiles, getMovedTiles } from "./helpers";
 
 const Field = () => {
   const [tiles, setTiles] = useState([]);
-
+  const [direction, setDirection] = useState();
   const handleKeyPress = (event) => {
     if (DIRECTIONS[event.key]) {
+      setDirection(event.key);
       setTiles((prevTiles) => getMovedTiles(prevTiles, event.key));
     }
   };
@@ -27,7 +33,15 @@ const Field = () => {
     <div className="game-field" onKeyDown={handleKeyPress} tabIndex={-1}>
       {tiles.map((tileRow, r) =>
         tileRow.map((value, c) => (
-          <Tile key={`row-${r} col-${c}`} value={value} />
+          <div className="game-tile" key={`row-${r} col-${c}`}>
+            <Tile
+              row={r}
+              col={c}
+              value={value}
+              direction={direction}
+              emptyTilesCount={getEmptyTilesInDirection(tiles, r, c, direction)}
+            />
+          </div>
         ))
       )}
     </div>

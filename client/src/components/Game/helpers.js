@@ -46,11 +46,43 @@ const getMovedTiles = (oldTiles, direction) => {
     }
   }
   if (!isMoreMovesLeft(newTiles)) alert("Game Over");
-  if (!isTilesSame(oldTiles, newTiles)) spawnRandomCell(newTiles);
+  if (!isTilesSame(oldTiles, newTiles)) {
+    // setTimeout(() => {
+      spawnRandomCell(newTiles);
+    // }, 500);
+  }
 
   return newTiles;
 };
-
+const getEmptyTilesInDirection = (tiles, tileRow, tileCol, direction) => {
+  let count = 0;
+  if (direction === "ArrowUp") {
+    for (let i = tileRow; isInBorders(i); i--) {
+      if (tiles[i][tileCol] === 0) {
+        count++;
+      }
+    }
+  } else if (direction === "ArrowDown") {
+    for (let i = tileRow; isInBorders(i); i++) {
+      if (tiles[i][tileCol] === 0) {
+        count++;
+      }
+    }
+  } else if (direction === "ArrowLeft") {
+    for (let i = tileCol; isInBorders(i); i--) {
+      if (tiles[tileRow][i] === 0) {
+        count++;
+      }
+    }
+  } else if (direction === "ArrowRight") {
+    for (let i = tileCol; isInBorders(i); i++) {
+      if (tiles[tileRow][i] === 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+};
 const isMoreMovesLeft = (tiles) => {
   if (getEmptyTilesCount(tiles) !== 0) return true;
   else {
@@ -147,4 +179,10 @@ const generateTiles = () => {
 
   return tiles;
 };
-export { DIRECTIONS, generateTiles, spawnRandomCell, getMovedTiles };
+export {
+  DIRECTIONS,
+  generateTiles,
+  spawnRandomCell,
+  getMovedTiles,
+  getEmptyTilesInDirection,
+};
