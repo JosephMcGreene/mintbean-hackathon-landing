@@ -4,9 +4,11 @@ const DIRECTIONS = {
   ArrowDown: { row: 1, col: 0, rowStart: 3 },
   ArrowUp: { row: -1, col: 0 },
 };
+
 const isInBorders = (i) => {
   return i >= 0 && i < 4;
 };
+
 const isTilesSame = (oldTiles, newTiles) => {
   let isSame = true;
   for (let i = 0; i < 4; i++) {
@@ -19,6 +21,7 @@ const isTilesSame = (oldTiles, newTiles) => {
   }
   return isSame;
 };
+
 const getTilesCopy = (oldTiles) => {
   let newTiles = [];
   for (let i = 0; i < 4; i++) {
@@ -26,6 +29,7 @@ const getTilesCopy = (oldTiles) => {
   }
   return newTiles;
 };
+
 const getMovedTiles = (oldTiles, direction) => {
   let newTiles = getTilesCopy(oldTiles);
   for (
@@ -41,11 +45,12 @@ const getMovedTiles = (oldTiles, direction) => {
       moveTile(newTiles, i, j, direction);
     }
   }
-  if (!isMoreMovesLeft(newTiles)) console.log("Game Over");
+  if (!isMoreMovesLeft(newTiles)) alert("Game Over");
   if (!isTilesSame(oldTiles, newTiles)) spawnRandomCell(newTiles);
 
   return newTiles;
 };
+
 const isMoreMovesLeft = (tiles) => {
   if (getEmptyTilesCount(tiles) !== 0) return true;
   else {
@@ -61,6 +66,7 @@ const isMoreMovesLeft = (tiles) => {
     return false;
   }
 };
+
 const moveTile = (tiles, row, col, direction) => {
   if (tiles[row][col] === 0) return;
 
@@ -74,10 +80,34 @@ const moveTile = (tiles, row, col, direction) => {
     } else if (tiles[newRow][newCol] === tiles[row][col]) {
       tiles[newRow][newCol] *= 2;
       tiles[row][col] = 0;
-      if (tiles[newRow][newCol] === 2048) alert("You won");
+      if (tiles[newRow][newCol] === 2048) alert("You won!");
     }
   }
 };
+
+const animate = (tile, direction) => {
+  let xPos = 0;
+  let yPos = 0;
+
+  if (direction === DIRECTIONS.ArrowLeft) {
+    xPos += 25;
+    tile.style.transform = `translateX(-${xPos}px)`;
+  } else if (direction === DIRECTIONS.ArrowRight) {
+    xPos += 25;
+    tile.style.transform = `translateX(${xPos}px)`;
+  } else if (direction === DIRECTIONS.ArrowUp) {
+    yPos += 25;
+    tile.style.transform = `translateY(-${yPos}px)`;
+  } else if (direction === DIRECTIONS.ArrowDown) {
+    yPos += 25;
+    tile.style.transform = `translateY(${yPos}px)`;
+  }
+
+  if ((xPos < 125) | (yPos < 125)) {
+    requestAnimationFrame(animate);
+  }
+};
+
 const getEmptyTilesCount = (tiles) => {
   let count = 0;
   for (let i = 0; i < 4; i++) {
@@ -89,6 +119,7 @@ const getEmptyTilesCount = (tiles) => {
   }
   return count;
 };
+
 const spawnRandomCell = (tiles) => {
   let value = getRandomInt(100) < 90 ? 2 : 4;
   let row = getRandomInt(4),

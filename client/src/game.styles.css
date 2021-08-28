@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.game-field {
+  width: 500px;
+  height: 500px;
+  margin: 1rem auto 0 auto;
+  background-color: rgb(114, 113, 113);
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.game-field:focus {
+  box-shadow: 0 0 15px rgb(114, 113, 113);
+}
+.game-field:focus-visible {
+  box-shadow: 0 0 15px rgb(114, 113, 113);
+  outline: none;
+}
+
+.game-tile {
+  font-size: 3.25rem;
+  background-color: lightblue;
+  box-shadow: 0 0 10px lightblue;
+  border-radius: 10px;
+
+  display: grid;
+  margin: 0.5rem;
+  place-items: center;
+}
+
+.active-tile {
+  font-size: 3.25rem;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  margin: 0.5rem;
+
+  display: grid;
+  margin: 0.6rem;
+  place-items: center;
+}
