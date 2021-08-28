@@ -1,18 +1,51 @@
 body {
-  height: 200vh;
+  font-family: "Work Sans", sans-serif;
+  box-shadow: 0 3px 3px lightblue;
+  text-shadow: 0 3px 3px lightblue;
 }
 
-nav ul {
+.navbar {
+  box-shadow: 0 0 5px black;
+  text-shadow: 0 3px 3px lightblue;
+}
+
+.container-fluid {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+ul {
   list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: lightblue;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
 }
 
 .btn {
   font-weight: 500;
   border-radius: 5px;
 }
+.btn-light {
+  box-shadow: 0 3px 3px lightblue;
+}
 
 h1 {
   margin-top: 5rem !important;
+}
+
+h1,
+h2,
+h5 {
+  font-family: "Maven Pro", sans-serif;
 }
 
 p {
@@ -23,6 +56,7 @@ p {
   font-size: 1.25rem;
   display: block;
   margin: 0 auto;
+  text-decoration-line: none;
 }
 
 .card {
@@ -32,21 +66,62 @@ p {
   margin-right: auto;
 }
 
-@media screen and (max-width: 455px) {
+.social-media-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.social-media-links a {
+  padding: 5px 10px;
+}
+
+footer {
+  background-color: black;
+  box-shadow: 0 -3px 3px black;
+  color: white;
+}
+footer a {
+  color: white;
+}
+footer ul {
+  padding: 25px 20px;
+
+  display: flex;
+  flex-direction: row;
+}
+footer ul li:nth-child(2) {
+  margin-left: auto;
+}
+
+footer,
+footer ul {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 510px) {
   nav button {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 460px) {
+@media screen and (min-width: 512px) {
   section button {
     display: none !important;
+  }
+
+  nav button {
+    margin-left: 1.5rem;
   }
 }
 
 @media screen and (min-width: 575px) {
   .card {
     max-width: 100%;
+  }
+
+  .container-fluid {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
 }
 
