@@ -1,12 +1,31 @@
+@font-face {
+  font-family: "kanitregular";
+  src: url("./fonts/kanit-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kanitbold";
+  src: url("./fonts/kanit-bold-webfont.woff") format("woff");
+  font-weight: normal; /* Actually bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "kanitextrabold";
+  src: url("./fonts/kanit-extrabold-webfont.woff") format("woff");
+  font-weight: normal; /* Actually extra bold */
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "kanitregular", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,7 +36,8 @@ code {
 }
 
 h1 {
-  font-size: 4.4rem;
+  font-family: "kanitextrabold";
+  font-size: 4.5rem;
   font-weight: 800;
   margin: 0;
   text-align: center;
@@ -26,6 +46,7 @@ h1 {
 
 .game-button {
   display: block;
+  font-family: "kanitregular";
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
   margin: 15px auto;
