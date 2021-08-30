@@ -1,6 +1,6 @@
 import "../../game.styles.css";
-import React, { useEffect, useRef, useState } from "react";
-import { DIRECTIONS } from "./helpers";
+import React, { useEffect, useState } from "react";
+import { DIRECTIONS } from "helpers/field.helper";
 
 import TileContainer from "./TileContainer";
 
@@ -30,7 +30,7 @@ const Field = ({ setScore, gameFieldRef }) => {
     return () => {
       isCancelled = true;
     };
-  }, [triggerRender]);
+  }, [triggerRender, gameFieldRef]);
 
   return (
     <div className="game-field" onKeyDown={handleKeyPress} tabIndex={-1}>

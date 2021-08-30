@@ -1,5 +1,3 @@
-import { DIRECTIONS } from "components/Game/helpers";
-
 function GameTile(row, col, value = 0) {
   this.row = row;
   this.col = col;

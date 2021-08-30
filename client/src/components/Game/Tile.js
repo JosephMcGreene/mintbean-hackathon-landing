@@ -1,11 +1,9 @@
-import { generateTiles } from "helpers/field.helper";
 import React from "react";
 import { useState } from "react";
-import { createUseStyles } from "react-jss";
 import { useEffect } from "react/cjs/react.development";
 
 import "../../game.styles.css";
-import { DIRECTIONS } from "./helpers";
+
 
 const getTileClassName = (value) => {
   if (value <= 2) return 2;
