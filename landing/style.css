@@ -28,7 +28,7 @@ body {
 }
 
 .navbar {
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 3px 5px lightblue;
   text-shadow: 0 3px 3px lightblue;
 }
 
@@ -69,8 +69,13 @@ h2 {
   letter-spacing: 1px;
   border-radius: 5px;
 }
-.btn-light {
-  box-shadow: 0 3px 3px lightblue;
+.btn-light:hover {
+  background-color: black;
+  color: white;
+}
+.btn-dark:hover {
+  background-color: white;
+  color: black;
 }
 
 h1 {
@@ -85,9 +90,10 @@ h5 {
 
 p {
   font-size: 1.15rem;
+  text-align: justify;
 }
 
-#play-button {
+.play-button {
   font-family: "kanitbold";
   font-size: 1.25rem;
   font-size: 1.2rem;
@@ -95,6 +101,7 @@ p {
   display: block;
   margin: 0 auto;
   text-decoration-line: none;
+  box-shadow: 0 3px 3px lightblue;
 }
 
 .card {
@@ -148,7 +155,7 @@ footer ul {
   }
 
   nav button {
-    margin-left: 1.5rem;
+    margin-left: 1.5rem !important;
   }
 }
 
@@ -166,5 +173,11 @@ footer ul {
 @media screen and (min-width: 900px) {
   .card {
     max-width: 65%;
+  }
+
+  .intro-p {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
