@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import LoginModal from "./LoginModal";
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
 
-    setShowModal(false);
+    setShowLogin(false);
   };
 
   return (
@@ -21,11 +21,12 @@ const Header = () => {
         type="button"
         id="loginButton"
         className="game-button"
-        onClick={() => setShowModal(true)}
+        onClick={() => setShowLogin(true)}
       >
         Login
       </button>
-      <LoginModal showModal={showModal} onSubmit={handleSubmit} />
+      {/* display: none until user clicks #loginButton */}
+      <LoginModal showLogin={showLogin} onSubmit={handleSubmit} />
     </header>
   );
 };

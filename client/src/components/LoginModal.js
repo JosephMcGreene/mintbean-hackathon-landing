@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import CreateUser from "./CreateUser";
 
-const LoginModal = ({ showModal, onSubmit, onClick }) => {
-  if (!showModal) {
+const LoginModal = ({ showLogin, onSubmit }) => {
+  const [showCreateUser, setShowCreateUser] = useState(false);
+
+  if (!showLogin) {
     return null;
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
+
+    setShowCreateUser(false);
+  };
 
   return (
     <div id="loginModal">
       {/* Form to Log in: */}
-      <form action="" id="modalContent">
+      <form action="" className="modalContent">
         <h3>Login</h3>
-        <div className="login-inputs">
-          <label htmlFor="username">
-            Username:
-            <input type="text" id="username" />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <input type="text" id="password" />
-          </label>
+        <div className="modal-inputs">
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" />
+          <label htmlFor="password">Password:</label>
+          <input type="text" id="password" />
         </div>
         <button
           type="submit"
@@ -33,11 +40,12 @@ const LoginModal = ({ showModal, onSubmit, onClick }) => {
           type="button"
           id="newAccountBtn"
           className="game-button"
-          onClick={onClick}
+          onClick={() => setShowCreateUser(true)}
         >
-          Create a New Login
+          Create a New User
         </button>
       </form>
+      <CreateUser showCreateUser={showCreateUser} onSubmit={handleSubmit} />
     </div>
   );
 };

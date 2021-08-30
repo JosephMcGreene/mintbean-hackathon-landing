@@ -72,7 +72,19 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-#modalContent {
+#createUserModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
   width: 550px;
   background-color: white;
   text-align: center;
@@ -88,17 +100,15 @@ h3 {
   font-size: 1.5rem;
 }
 
-.login-inputs {
-  max-width: 70%;
+.modal-inputs {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
   font-size: 1.15rem;
 }
-.login-inputs input {
+.modal-inputs input {
   padding: 4px;
-  margin-left: 4px;
   margin-bottom: 8px;
 
   border-radius: 4px;
