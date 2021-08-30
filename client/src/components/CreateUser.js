@@ -7,9 +7,13 @@ const CreateUser = ({ showCreateUser, onSubmit }) => {
 
   return (
     <div id="createUserModal">
-      <form action="" id="" className="modalContent">
+      <form action="" className="modalContent">
         <h3>Create a New User</h3>
         <div className="modal-inputs">
+          <label htmlFor="email">
+            Email:
+            <input type="text" id="email" />
+          </label>
           <label htmlFor="username">
             Username:
             <input type="text" id="username" />

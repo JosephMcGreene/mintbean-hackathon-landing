@@ -109,6 +109,7 @@ h3 {
 }
 .modal-inputs input {
   padding: 4px;
+  margin-left: 4px;
   margin-bottom: 8px;
 
   border-radius: 4px;
