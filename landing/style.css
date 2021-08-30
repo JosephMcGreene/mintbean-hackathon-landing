@@ -1,5 +1,28 @@
+@font-face {
+  font-family: "kanitregular";
+  src: url("./fonts/kanit-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kanitbold";
+  src: url("./fonts/kanit-bold-webfont.woff") format("woff");
+  font-weight: normal; /* Actually bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "kanitextrabold";
+  src: url("./fonts/kanit-extrabold-webfont.woff") format("woff");
+  font-weight: normal; /* Actually extra bold */
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "kanitregular", "Work Sans", sans-serif;
   box-shadow: 0 3px 3px lightblue;
   text-shadow: 0 3px 3px lightblue;
 }
@@ -14,6 +37,12 @@ body {
   padding-right: 0.5rem;
 }
 
+.navbar-nav {
+  font-family: "kanitbold";
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
 ul {
   list-style: none;
 }
@@ -26,12 +55,18 @@ a:hover {
   color: lightblue;
 }
 
+h2 {
+  font-weight: 800;
+}
+
 .navbar-brand {
   font-size: 2.5rem;
 }
 
 .btn {
   font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
   border-radius: 5px;
 }
 .btn-light {
@@ -45,15 +80,18 @@ h1 {
 h1,
 h2,
 h5 {
-  font-family: "Maven Pro", sans-serif;
+  font-family: "kanitbold", sans-serif;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 #play-button {
+  font-family: "kanitbold";
   font-size: 1.25rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
   display: block;
   margin: 0 auto;
   text-decoration-line: none;
@@ -98,13 +136,13 @@ footer ul {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 544px) {
   nav button {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 512px) {
+@media screen and (min-width: 546px) {
   section button {
     display: none !important;
   }
