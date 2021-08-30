@@ -16,11 +16,79 @@ code {
     monospace;
 }
 
+h1 {
+  font-size: 4.4rem;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 3px 3px lightblue;
+}
+
+.game-button {
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  margin: 15px auto;
+
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 4px lightblue;
+}
+.game-button:hover {
+  cursor: pointer;
+}
+
+#loginModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modalContent {
+  width: 550px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgb(50, 50, 50);
+
+  font-weight: 500;
+  text-shadow: 0 3px 3px lightblue;
+}
+
+h3 {
+  margin-top: 5px;
+  font-size: 1.5rem;
+}
+
+.login-inputs {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  font-size: 1.15rem;
+}
+.login-inputs input {
+  padding: 4px;
+  margin-left: 4px;
+  margin-bottom: 8px;
+
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
 .game-field {
   width: 500px;
   height: 500px;
   margin: 1rem auto 0 auto;
-  background-color: rgb(114, 113, 113);
+  background-color: grey;
   border-radius: 15px;
 
   display: grid;
@@ -51,7 +119,7 @@ code {
   background-color: black;
   color: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
   margin: 0.5rem;
 
   display: grid;
