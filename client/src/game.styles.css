@@ -22,10 +22,10 @@ code {
   margin: 1rem auto 0 auto;
   background-color: rgb(114, 113, 113);
   border-radius: 15px;
-
-  display: grid;
+  position: relative;
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr); */
 }
 .game-field:focus {
   box-shadow: 0 0 15px rgb(114, 113, 113);
@@ -35,31 +35,57 @@ code {
   outline: none;
 }
 
-.game-tile {
+.tile-container {
+  width: 110px;
+  height: 110px;
   font-size: 3.25rem;
   background-color: lightblue;
   box-shadow: 0 0 10px lightblue;
   border-radius: 10px;
-
+  position: absolute;
   display: grid;
-  margin: 0.5rem;
   place-items: center;
+  margin-top: 7.5px;
+  margin-left: 7.5px;
 }
 
 .active-tile {
   font-size: 3.25rem;
-  width: 100%;
-  height: 100%;
+  width: 110px;
+  height: 110px;
   background-color: black;
   color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px black;
-
   display: grid;
-  margin: 0.6rem;
+  position: static;
   place-items: center;
-  transition: transform 0.55s;
+  transition: width 0.2s, height 0.2s;
+  z-index: 5;
 }
 .empty-tile {
   display: none;
+}
+.tile-2 {
+  background-color: rgb(180, 180, 180);
+}
+.tile-4 {
+  background-color: rgb(150, 150, 150);
+}
+.tile-8 {
+  background-color: rgb(255, 120, 30);
+}
+.tile-16 {
+  background-color: rgb(221, 106, 30);
+}
+.tile-32 {
+  background-color: rgb(230, 57, 14);
+}
+.tile-64 {
+  background-color: rgb(190, 47, 11);
+}
+.tile-2048 {
+  background-color: rgb(255, 187, 0);
+}
+.tile-4096 {
 }

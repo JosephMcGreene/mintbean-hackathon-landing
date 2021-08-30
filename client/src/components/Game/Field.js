@@ -1,47 +1,47 @@
-import Tile from "./Tile";
 import "../../game.styles.css";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  DIRECTIONS,
-  generateTiles,
-  getEmptyTilesInDirection,
-  getMovedTiles,
-} from "./helpers";
-// import styled, { keyframes } from "styled-components";
-// import {
-//   fadeOutDown,
-//   fadeOutLeft,
-//   fadeOutRight,
-//   fadeOutUp,
-// } from "react-animations";
+import { DIRECTIONS } from "./helpers";
 
-const Field = () => {
+import TileContainer from "./TileContainer";
+
+const Field = ({ setScore, gameFieldRef }) => {
+  const [triggerRender, setTriggerRender] = useState(0);
   const [tiles, setTiles] = useState([]);
-  const [direction, setDirection] = useState();
+
   const handleKeyPress = (event) => {
     if (DIRECTIONS[event.key]) {
-      setDirection(event.key);
-      setTiles((prevTiles) => getMovedTiles(prevTiles, event.key));
+      gameFieldRef.current.move(event.key);
+      if (gameFieldRef.current.isTilesChanged())
+        gameFieldRef.current.newRandomTile();
+      if (gameFieldRef.current.isWon()) {
+        alert("Congrats");
+      }
+      if (!gameFieldRef.current.isMovesLeft()) {
+        alert("Lost");
+      }
+      setScore(gameFieldRef.current.score);
+      setTriggerRender((prev) => prev + 1);
     }
   };
 
   useEffect(() => {
-    setTiles(generateTiles());
-  }, []);
+    let isCancelled = false;
+    if (!isCancelled) setTiles(gameFieldRef.current.tiles);
+    return () => {
+      isCancelled = true;
+    };
+  }, [triggerRender]);
 
   return (
     <div className="game-field" onKeyDown={handleKeyPress} tabIndex={-1}>
       {tiles.map((tileRow, r) =>
-        tileRow.map((value, c) => (
-          <div className="game-tile" key={`row-${r} col-${c}`}>
-            <Tile
-              row={r}
-              col={c}
-              value={value}
-              direction={direction}
-              emptyTilesCount={getEmptyTilesInDirection(tiles, r, c, direction)}
-            />
-          </div>
+        tileRow.map((tile, c) => (
+          <TileContainer
+            key={`row-${r} col-${c}`}
+            row={r}
+            col={c}
+            tile={tile}
+          />
         ))
       )}
     </div>
