@@ -7,6 +7,7 @@ const LoginModal = ({ showModal, onSubmit, onClick }) => {
 
   return (
     <div id="loginModal">
+      {/* Form to Log in: */}
       <form action="" id="modalContent">
         <h3>Login</h3>
         <div className="login-inputs">
@@ -27,7 +28,7 @@ const LoginModal = ({ showModal, onSubmit, onClick }) => {
         >
           Submit
         </button>
-        Or
+        <h2>Or</h2>
         <button
           type="button"
           id="newAccountBtn"

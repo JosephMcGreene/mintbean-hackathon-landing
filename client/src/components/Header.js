@@ -7,6 +7,8 @@ const Header = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
+
     setShowModal(false);
   };
 
