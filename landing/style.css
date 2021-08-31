@@ -24,9 +24,9 @@
 /* ========== Background Animation ========== */
 
 body {
-  background: linear-gradient(45deg, lightgrey, white, lightgrey, white);
+  background: linear-gradient(90deg, lightblue, darkgrey, lightblue, darkgrey);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 8s ease infinite;
   height: 100vh;
 }
 

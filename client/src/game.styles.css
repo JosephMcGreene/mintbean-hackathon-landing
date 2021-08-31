@@ -23,8 +23,8 @@
 
 /* ========== Background Animation ========== */
 
-body {
-  background: linear-gradient(45deg, lightgrey, white, lightgrey, white);
+/* body {
+  background: linear-gradient(90deg, lightblue, darkgrey, lightblue, darkgrey);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   height: 100vh;
@@ -40,7 +40,7 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 /* ========== /Background Animation ========== */
 
