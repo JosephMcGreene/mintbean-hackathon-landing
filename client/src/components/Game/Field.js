@@ -1,5 +1,5 @@
 import "../../game.styles.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { DIRECTIONS } from "helpers/field.helper";
 
 import TileContainer from "./TileContainer";

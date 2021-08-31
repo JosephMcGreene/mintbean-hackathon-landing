@@ -1,9 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 
 import "../../game.styles.css";
-
 
 const getTileClassName = (value) => {
   if (value <= 2) return 2;

@@ -1,6 +1,5 @@
-import Game from "components/Game/Game";
-import React from "react";
 import "./App.css";
+import Game from "./components/Game/Game";
 import Login from "./components/Player/Login";
 import Home from "./Pages/Home";
 // import { BrowserRouter as Switch, Route, Link, useHistory, useLocation } from 'react-router-dom';
