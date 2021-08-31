@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginModal from "./LoginModal";
+import LoginModal from "./Player/LoginModal";
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false);

@@ -1,21 +1,17 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import CreateUser from "./CreateUser";
 
-const LoginModal = ({ showLogin, onSubmit }) => {
-  const [showCreateUser, setShowCreateUser] = useState(false);
-
-  if (!showLogin) {
-    return null;
-  }
-
+const LoginModal = ({ onSubmit }) => {
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
-
-    setShowCreateUser(false);
   };
-
+  const handleCreateUser = () => {
+    history.push("/register");
+  };
   return (
     <div id="loginModal">
       {/* Form to Log in: */}
@@ -40,12 +36,11 @@ const LoginModal = ({ showLogin, onSubmit }) => {
           type="button"
           id="newAccountBtn"
           className="game-button"
-          onClick={() => setShowCreateUser(true)}
+          onClick={handleCreateUser}
         >
           Create a New User
         </button>
       </form>
-      <CreateUser showCreateUser={showCreateUser} onSubmit={handleSubmit} />
     </div>
   );
 };

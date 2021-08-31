@@ -1,10 +1,6 @@
 import React from "react";
 
-const CreateUser = ({ showCreateUser, onSubmit }) => {
-  if (!showCreateUser) {
-    return null;
-  }
-
+const CreateUser = ({ onSubmit }) => {
   return (
     <div id="createUserModal">
       <form action="" className="modalContent">

@@ -71,6 +71,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 #createUserModal {
   position: fixed;
@@ -157,8 +158,6 @@ h3 {
   color: white;
   border-radius: 10px;
   box-shadow: 0 0 5px black;
-  margin: 0.5rem;
-
   display: grid;
   position: static;
   place-items: center;
