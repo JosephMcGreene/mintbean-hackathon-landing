@@ -1,6 +1,6 @@
-import Field from "./Field";
 import { useRef, useState } from "react";
-import GameField from "helpers/field.helper";
+import Field from "./Field";
+import GameField from "../../helpers/field.helper";
 const Game = () => {
   const [score, setScore] = useState(0);
 
