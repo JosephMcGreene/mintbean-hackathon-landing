@@ -21,6 +21,7 @@ const Header = () => {
         type="button"
         id="loginButton"
         className="game-button"
+        showLogin={false}
         onClick={() => setShowLogin(true)}
       >
         Login

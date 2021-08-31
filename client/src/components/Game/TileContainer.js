@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tile from "./Tile";
 const TileContainer = (props) => {
   const { row, col, tile } = props;

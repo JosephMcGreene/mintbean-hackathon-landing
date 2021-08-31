@@ -44,6 +44,10 @@ h1 {
   text-shadow: 0 3px 3px lightblue;
 }
 
+h3 {
+  text-align: center;
+}
+
 .game-button {
   display: block;
   font-family: "kanitregular";

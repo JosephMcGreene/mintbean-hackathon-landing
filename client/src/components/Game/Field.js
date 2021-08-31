@@ -1,6 +1,6 @@
 import "../../game.styles.css";
-import { useEffect, useState } from "react";
-import { DIRECTIONS } from "helpers/field.helper";
+import React, { useEffect, useState } from "react";
+import { DIRECTIONS } from "../../helpers/field.helper";
 
 import TileContainer from "./TileContainer";
 
@@ -14,7 +14,7 @@ const Field = ({ setScore, gameFieldRef }) => {
       if (gameFieldRef.current.isTilesChanged())
         gameFieldRef.current.newRandomTile();
       if (gameFieldRef.current.isWon()) {
-        alert("Congrats");
+        alert("Congrats!");
       }
       if (!gameFieldRef.current.isMovesLeft()) {
         alert("Lost");

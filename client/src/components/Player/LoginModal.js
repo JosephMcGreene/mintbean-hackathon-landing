@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import CreateUser from "./CreateUser";
 
-const LoginModal = ({ onSubmit }) => {
+const LoginModal = ({ onSubmit, showLogin }) => {
   const history = useHistory();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
+    history.push("/login");
   };
+
   const handleCreateUser = () => {
     history.push("/register");
   };
+
+  if (!showLogin) {
+    return null;
+  }
+
   return (
     <div id="loginModal">
       {/* Form to Log in: */}
