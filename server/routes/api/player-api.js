@@ -9,7 +9,7 @@ const isAuth = require('../../middleware/authMiddleware').isAuth;
 
 router
 .route("/")
-.get(playerController.findAll)
+.get(isAuth,playerController.findAll)
 .post(playerController.create);
 
 // router
