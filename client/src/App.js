@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Game from "./components/Game/Game";
 // import { BrowserRouter as Switch, Route, Link, useHistory, useLocation } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -12,7 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Game} exact />
+        <Route path="/" component={Home} exact />
+        <Route path="/play" component={Game} exact />
         <Route path="/login" component={LoginModal} />
         <Route path="/register" component={CreateUser} />
         <Route path="/gamelist" component={GameList} />

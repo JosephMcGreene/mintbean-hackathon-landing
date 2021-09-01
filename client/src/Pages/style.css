@@ -1,18 +1,18 @@
 @font-face {
   font-family: "kanitregular";
-  src: url("./fonts/kanit-regular-webfont.woff") format("woff");
+  src: url("../fonts/kanit-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "kanitbold";
-  src: url("./fonts/kanit-bold-webfont.woff") format("woff");
+  src: url("../fonts/kanit-bold-webfont.woff") format("woff");
   font-weight: normal; /* Actually bold */
   font-style: normal;
 }
 @font-face {
   font-family: "kanitextrabold";
-  src: url("./fonts/kanit-extrabold-webfont.woff") format("woff");
+  src: url("../fonts/kanit-extrabold-webfont.woff") format("woff");
   font-weight: normal; /* Actually extra bold */
   font-style: normal;
 }
@@ -27,7 +27,7 @@
   background: linear-gradient(90deg, lightblue, darkgrey, lightblue, darkgrey);
   background-size: 400% 400%;
   animation: gradient 8s ease infinite;
-  height: 100vh;
+  height: 100%;
 }
 
 @keyframes gradient {
@@ -111,7 +111,7 @@ a:hover {
   color: black;
 }
 
-article p {
+.article-p {
   margin-left: 2vw;
   margin-right: 2vw;
 }
@@ -217,7 +217,7 @@ footer ul {
     max-width: 65%;
   }
 
-  article p {
+  .article-p {
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
