@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import "./style.css";
 import josephPhoto from "./img/profile-photo-joseph.jpg";
 import olzhasPhoto from "./img/profile-photo-olzhas.png";
+import taraPhoto from "./img/profile-photo-tara.jpg";
+
 const Home = () => {
   const history = useHistory();
   const handlePlayButton = () => {
@@ -220,12 +222,23 @@ const Home = () => {
             </div>
             <div className="col">
               <div className="card h-100">
-                <img src="#" className="card-img-top" alt="[profile-pic]" />
+                <img src={taraPhoto} className="card-img-top" alt="Tara Young" />
                 <div className="card-body">
                   <h5 className="card-title">Tara Young</h5>
-                  <p className="card-text">ADD DAT BIO</p>
+                  <p className="card-text">
+                      Returning to her roots in software engineering after twenty years in financial services.
+                      Tara's second stint in technology started at {" "}
+                      <a
+                      href="https://generalassemb.ly/education/software-engineering-immersive/austin?ga_campaign=immersive-remote&ga_variation=sei-tile"
+                      target="_blank"
+                    >
+                      General Assembly
+                    </a> in 2020.
+                    Tara works as a backend developer, using Node.js and Ruby on Rails.
+                    She's designing an application to replace her ever-present Muji A5 notebook.
+                  </p>
                   <div className="social-media-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/ty18881" target="_blank" rel="noopener noreferrer">
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -244,7 +257,7 @@ const Home = () => {
                         ></path>
                       </svg>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/tara-c-young" target="_blank" rel="noopener noreferrer">
                       <svg
                         aria-hidden="true"
                         focusable="false"
