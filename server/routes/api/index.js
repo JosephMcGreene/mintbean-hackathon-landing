@@ -1,7 +1,7 @@
-const router = require ("express").Router();
+const router = require("express").Router();
 
 const playerRoutes = require("./player-api");
-
+const gameRouter = require("./game-api");
 router.use("/player", playerRoutes);
-
-module.exports = router
+router.use("/games", gameRouter);
+module.exports = router;

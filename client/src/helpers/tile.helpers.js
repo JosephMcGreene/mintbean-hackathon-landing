@@ -1,10 +1,10 @@
-function GameTile(row, col, value = 0) {
+function GameTile(row, col, value = 0, prevRow, prevCol, isNewTile = true) {
   this.row = row;
   this.col = col;
   this.value = value;
-  this.prevRow = row;
-  this.prevCol = col;
-  this.isNewTile = true;
+  this.prevRow = prevRow || row;
+  this.prevCol = prevCol || col;
+  this.isNewTile = isNewTile;
 }
 GameTile.prototype.setIsMerged = function (bool) {
   this.merged = bool;

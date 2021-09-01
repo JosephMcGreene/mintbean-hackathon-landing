@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { DIRECTIONS } from "../../helpers/field.helper";
 
 import TileContainer from "./TileContainer";
+import Grid from "./Grid";
 
-const Field = ({ setScore, gameFieldRef }) => {
+const Field = ({ setScore, gameFieldRef, onMove, onWin }) => {
   const [triggerRender, setTriggerRender] = useState(0);
   const [tiles, setTiles] = useState([]);
 
@@ -14,13 +15,14 @@ const Field = ({ setScore, gameFieldRef }) => {
       if (gameFieldRef.current.isTilesChanged())
         gameFieldRef.current.newRandomTile();
       if (gameFieldRef.current.isWon()) {
-        alert("Congrats!");
+        onWin ? onWin() : alert("You won");
       }
       if (!gameFieldRef.current.isMovesLeft()) {
         alert("Lost");
       }
       setScore(gameFieldRef.current.score);
       setTriggerRender((prev) => prev + 1);
+      onMove && onMove();
     }
   };
 
