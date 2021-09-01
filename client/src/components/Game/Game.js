@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Header from "../Header";
 import Field from "./Field";
 import GameField from "../../helpers/field.helper";
-import { useHistory } from "react-router";
 import { usePlayer } from "context/PlayerContext";
 const Game = () => {
   const [score, setScore] = useState(0);

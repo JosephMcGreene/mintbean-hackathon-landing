@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Header from "../Header";
 import Field from "components/Game/Field";
 import GameField from "../../helpers/field.helper";
 import { useHistory, useParams } from "react-router";
@@ -69,6 +68,7 @@ const MPGame = (props) => {
     return () => {
       socket?.off("otherTiles");
     };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth]);
   return (
     <div>

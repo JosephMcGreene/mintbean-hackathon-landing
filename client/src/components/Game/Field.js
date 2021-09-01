@@ -1,9 +1,7 @@
 import "../../game.styles.css";
 import React, { useEffect, useState } from "react";
 import { DIRECTIONS } from "../../helpers/field.helper";
-
 import TileContainer from "./TileContainer";
-import Grid from "./Grid";
 
 const Field = ({ setScore, gameFieldRef, onMove, onWin }) => {
   const [triggerRender, setTriggerRender] = useState(0);

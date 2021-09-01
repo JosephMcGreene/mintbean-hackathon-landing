@@ -1,5 +1,5 @@
 import { usePlayer } from "context/PlayerContext";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import LoginModal from "./Player/LoginModal";
 

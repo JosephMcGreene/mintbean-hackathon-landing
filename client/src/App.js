@@ -6,7 +6,7 @@ import LoginModal from "./components/Player/LoginModal";
 import CreateUser from "./components/Player/CreateUser";
 import GameList from "components/GameList/GameList";
 import MPGame from "components/MPGame/MPGame";
-
+import Home from "Pages/Home";
 function App() {
   return (
     <BrowserRouter>

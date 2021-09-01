@@ -8,4 +8,5 @@ const register = (playerData) => {
 const authenticate = () => {
   return Axios.post("/api/player/authenticate");
 };
-export default { login, register, authenticate };
+const PlayerServices = { login, register, authenticate }
+export default PlayerServices;

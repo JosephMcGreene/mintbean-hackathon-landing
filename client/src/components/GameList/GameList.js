@@ -28,6 +28,7 @@ const GameList = () => {
     return () => {
       socket?.off("new-game-created", onNewGame);
     };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isAuth]);
   return (
     <div>
@@ -35,10 +36,15 @@ const GameList = () => {
         New game{" "}
       </button>
       <ul>
+        <li className="list-item">
+          <h4 className="list-header">Game ID</h4>
+        </li>
         {Object.keys(list).map((gameId) => (
-          <li key={gameId}>
-            <h4>{gameId}</h4>
-            <button onClick={handleJoin(gameId)}>Join</button>
+          <li key={gameId} className="list-item">
+            <h4 >{gameId}</h4>
+            <button className="list-item-button" onClick={handleJoin(gameId)}>
+              Join
+            </button>
           </li>
         ))}
       </ul>

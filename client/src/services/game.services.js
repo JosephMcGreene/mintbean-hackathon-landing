@@ -5,4 +5,5 @@ const fetchGameList = () => {
 const fetchGame = (gameId) => {
   return Axios.get(`/api/games/${gameId}`);
 };
-export default { fetchGameList, fetchGame };
+const GameServices = { fetchGameList, fetchGame };
+export default GameServices;
