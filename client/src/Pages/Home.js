@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import josephPhoto from "./img/profile-photo-joseph.jpg";
+import olzhasPhoto from "./img/profile-photo-olzhas.png";
 const Home = () => {
   const history = useHistory();
   const handlePlayButton = () => {
@@ -83,12 +84,23 @@ const Home = () => {
           <div className="row row-cols-1 row-cols-sm-3 px-0 mx-0">
             <div className="col">
               <div className="card h-100">
-                <img src="#" className="card-img-top" alt="[profile-pic]" />
+                <img
+                  src={olzhasPhoto}
+                  className="card-img-top"
+                  alt="Olzhas Kalikhan"
+                />
                 <div className="card-body">
                   <h5 className="card-title">Olzhas Kalikhan</h5>
-                  <p className="card-text">ADD DAT BIO</p>
+                  <p className="card-text">
+                    A Jr. Web developer, with experince in MERN stack. Graduate
+                    of Seneca College in Computer Programming. Interests: video
+                    games, basketball, shows{" "}
+                  </p>
                   <div className="social-media-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/olzhas-kalikhan"
+                      target="_blank"
+                    >
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -107,7 +119,10 @@ const Home = () => {
                         ></path>
                       </svg>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://www.linkedin.com/in/olzhas-kalikhan/"
+                      target="_blank"
+                    >
                       <svg
                         aria-hidden="true"
                         focusable="false"
