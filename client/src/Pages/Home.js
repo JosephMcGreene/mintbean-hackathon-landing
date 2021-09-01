@@ -74,6 +74,7 @@ const Home = () => {
             <button
               type="button"
               className="btn btn-dark px-4 py-3 play-button"
+              onClick={handlePlayButton}
             >
               Play It Now!
             </button>
@@ -222,23 +223,33 @@ const Home = () => {
             </div>
             <div className="col">
               <div className="card h-100">
-                <img src={taraPhoto} className="card-img-top" alt="Tara Young" />
+                <img
+                  src={taraPhoto}
+                  className="card-img-top"
+                  alt="Tara Young"
+                />
                 <div className="card-body">
                   <h5 className="card-title">Tara Young</h5>
                   <p className="card-text">
-                      Returning to her roots in software engineering after twenty years in financial services.
-                      Tara's second stint in technology started at {" "}
-                      <a
+                    Returning to her roots in software engineering after twenty
+                    years in financial services. Tara's second stint in
+                    technology started at{" "}
+                    <a
                       href="https://generalassemb.ly/education/software-engineering-immersive/austin?ga_campaign=immersive-remote&ga_variation=sei-tile"
                       target="_blank"
                     >
                       General Assembly
-                    </a> in 2020.
-                    Tara works as a backend developer, using Node.js and Ruby on Rails.
-                    She's designing an application to replace her ever-present Muji A5 notebook.
+                    </a>{" "}
+                    in 2020. Tara works as a backend developer, using Node.js
+                    and Ruby on Rails. She's designing an application to replace
+                    her ever-present Muji A5 notebook.
                   </p>
                   <div className="social-media-links">
-                    <a href="https://github.com/ty18881" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/ty18881"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -257,7 +268,11 @@ const Home = () => {
                         ></path>
                       </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/tara-c-young" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://www.linkedin.com/in/tara-c-young"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <svg
                         aria-hidden="true"
                         focusable="false"
@@ -312,6 +327,7 @@ const Home = () => {
             <button
               type="button"
               className="btn btn-dark px-4 py-3 play-button"
+              onClick={handlePlayButton}
             >
               Play the Game
             </button>
