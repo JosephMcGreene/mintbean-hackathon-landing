@@ -73,7 +73,7 @@ Field.prototype.removeTile = function ({ row, col }) {
   this.tiles[row][col] = null;
 };
 Field.prototype.getTile = function ({ row, col }) {
-  return this.tiles[row][col] || null;
+  return this.tiles[row]?.[col] || null;
 };
 Field.prototype.moveTile = function (tile, direction) {
   tile.saveCoords();
@@ -86,7 +86,7 @@ Field.prototype.moveTile = function (tile, direction) {
     currCoords.row += DIRECTIONS[direction].row;
     currCoords.col += DIRECTIONS[direction].col;
   }
-  if (this.getTile(currCoords).value === tile.value) {
+  if (this.getTile(currCoords)?.value === tile.value) {
     tile.setValue();
     this.score += tile.value;
     if (tile.value === 2048) this.won = true;
