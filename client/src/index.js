@@ -3,10 +3,12 @@ import ReactDOM from "react-dom";
 import "./game.styles.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
+import PlayerProvider from "context/PlayerContext";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PlayerProvider>
+      <App />
+    </PlayerProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

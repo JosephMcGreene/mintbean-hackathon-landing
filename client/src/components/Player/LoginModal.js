@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import CreateUser from "./CreateUser";
-
-const LoginModal = ({ onSubmit, showLogin }) => {
+import { fetchUser } from "helpers/context.helpers";
+import { usePlayer } from "context/PlayerContext";
+const LoginModal = ({ handleClose, showLogin }) => {
   const history = useHistory();
 
+  const { state, dispatch } = usePlayer();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    history.push("/login");
+    fetchUser(formData)(dispatch);
+    if (state.isAuth) history.push("/gamelist");
+    handleClose();
   };
 
   const handleCreateUser = () => {
     history.push("/register");
+  };
+  const handleUsernameChange = (event) => {
+    setFormData((prevData) => ({ ...prevData, username: event.target.value }));
+  };
+  const handlePasswordChange = (event) => {
+    setFormData((prevData) => ({ ...prevData, password: event.target.value }));
   };
 
   if (!showLogin) {
@@ -22,21 +34,23 @@ const LoginModal = ({ onSubmit, showLogin }) => {
   return (
     <div id="loginModal">
       {/* Form to Log in: */}
-      <form action="" className="modalContent">
+      <form className="modalContent" onSubmit={handleSubmit}>
         <h3>Login</h3>
         <div className="modal-inputs">
           <label htmlFor="username">Username:</label>
-          <input type="text" id="username" />
+          <input type="text" id="username" onChange={handleUsernameChange} />
           <label htmlFor="password">Password:</label>
-          <input type="text" id="password" />
+          <input
+            type="password"
+            id="password"
+            onChange={handlePasswordChange}
+          />
         </div>
-        <button
-          type="submit"
-          id="loginSubmit"
-          className="game-button"
-          onClick={onSubmit}
-        >
+        <button type="submit" id="loginSubmit" className="game-button">
           Submit
+        </button>
+        <button type="submit" className="game-button" onClick={handleClose}>
+          Cancel
         </button>
         <h2>Or</h2>
         <button

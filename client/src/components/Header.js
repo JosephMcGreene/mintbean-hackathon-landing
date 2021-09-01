@@ -1,14 +1,14 @@
+import { usePlayer } from "context/PlayerContext";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import LoginModal from "./Player/LoginModal";
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // NEED ACTUAL STUFF HERE. JUST CLOSES THE MODAL RIGHT NOW
-
+  const { state } = usePlayer();
+  const { isAuth } = state;
+  const history = useHistory();
+  const handleClose = () => {
     setShowLogin(false);
   };
 
@@ -17,17 +17,27 @@ const Header = () => {
       <h1>
         2048<sup>2</sup>
       </h1>
-      <button
-        type="button"
-        id="loginButton"
-        className="game-button"
-        showLogin={false}
-        onClick={() => setShowLogin(true)}
-      >
-        Login
-      </button>
+      {isAuth ? (
+        <button
+          type="button"
+          className="game-button"
+          onClick={() => history.push("/gamelist")}
+        >
+          Game List
+        </button>
+      ) : (
+        <button
+          type="button"
+          id="loginButton"
+          className="game-button"
+          showLogin={false}
+          onClick={() => setShowLogin(true)}
+        >
+          Login
+        </button>
+      )}
       {/* display: none until user clicks #loginButton */}
-      <LoginModal showLogin={showLogin} onSubmit={handleSubmit} />
+      <LoginModal showLogin={showLogin} handleClose={handleClose} />
     </header>
   );
 };

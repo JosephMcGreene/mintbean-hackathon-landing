@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import "./style.css";
 import josephPhoto from "./img/profile-photo-joseph.jpg";
 const Home = () => {
-
- 
-
+  const history = useHistory();
+  const handlePlayButton = () => {
+    history.push("/play");
+  };
   return (
     <div className="body">
       <nav className="navbar fixed-top navbar-dark bg-dark">
@@ -31,7 +32,7 @@ const Home = () => {
                 <button
                   type="button"
                   className="btn btn-light px-4 py-2 play-button"
-                  
+                  onClick={handlePlayButton}
                 >
                   Play It Now!
                 </button>
@@ -70,7 +71,6 @@ const Home = () => {
             <button
               type="button"
               className="btn btn-dark px-4 py-3 play-button"
-            
             >
               Play It Now!
             </button>
@@ -83,11 +83,7 @@ const Home = () => {
           <div className="row row-cols-1 row-cols-sm-3 px-0 mx-0">
             <div className="col">
               <div className="card h-100">
-                <img
-                  src="#"
-                  className="card-img-top"
-                  alt="[personal picture]"
-                />
+                <img src="#" className="card-img-top" alt="[profile-pic]" />
                 <div className="card-body">
                   <h5 className="card-title">Olzhas Kalikhan</h5>
                   <p className="card-text">ADD DAT BIO</p>
@@ -209,11 +205,7 @@ const Home = () => {
             </div>
             <div className="col">
               <div className="card h-100">
-                <img
-                  src="#"
-                  className="card-img-top"
-                  alt="[personal picture]"
-                />
+                <img src="#" className="card-img-top" alt="[profile-pic]" />
                 <div className="card-body">
                   <h5 className="card-title">Tara Young</h5>
                   <p className="card-text">ADD DAT BIO</p>
