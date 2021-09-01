@@ -5,7 +5,7 @@ const passport = require("passport");
 const session = require("express-session");
 const MongoClient = require("mongodb");
 const MongoStore = require("connect-mongo");
-
+const path = require("path");
 const isAuth = require("./middleware/authMiddleware").isAuth;
 
 const routes = require("./routes/api/index");
@@ -94,18 +94,21 @@ app.use((req, res, next) => {
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.use(express.static(path.join(__dirname, "../client/build")));
 /**
  * Mounting the Routes
  */
 
 // app.use('/api', routes, isAuth);
 app.use("/api", routes);
-
+//react app routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
 /**
  * Server start up
  */
 
- server.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });

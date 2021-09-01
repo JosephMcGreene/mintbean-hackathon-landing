@@ -35,11 +35,8 @@ const PlayerProvider = ({ children }) => {
           type: "LOGIN_SUCCESS",
           payload: data,
         });
-        console.log(data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   }, []);
   return (
     <PlayerContext.Provider value={{ state, dispatch }}>
