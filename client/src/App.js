@@ -11,7 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Game} exact />
+        <Route path="/" component={Home} exact />
+        <Route path="/play" component={Game} exact />
         <Route path="/login" component={LoginModal} />
         <Route path="/register" component={CreateUser} />
       </Switch>
